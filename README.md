@@ -8,16 +8,23 @@ This project implements a high-accuracy facial recognition system using **DeepFa
 * **Preprocessing Pipeline:** Includes automated dataset loading, image resizing, and normalization.
 * **Hardware Ready:** Code includes logic to interface with an Arduino via Serial communication.
 
-### 🛠️ Tech Stack
-* **Language:** Python
-* **Library:** DeepFace, TensorFlow, Keras
-* **Data Processing:** NumPy, Scikit-learn
+### 🛠️ Tech Stack & Hardware
+* **Software:** Python (DeepFace, TensorFlow, Keras)
 * **Hardware:** Arduino Uno, Solenoid Lock, Relay Module
+* **Simulation:** Tinkercad
 
-### ⚠️ Current Status & Hardware Notes
-The software and deep learning model are fully functional. 
+### 📂 Project Files
+* **`Face Detection based door lock.ipynb`**: The main Deep Learning pipeline.
+* **`arduino_control.ino`**: C++ code to be uploaded to the Arduino.
+* **`tinkercad-setup.png`**: Visual guide for the circuit wiring.
 
-**Note on Arduino Implementation:** The physical hardware integration is currently pending due to a hardware component issue. However, the logic for triggering the lock is written in the Python script. I have included a **Tinkercad circuit diagram** in the repository to demonstrate the intended wiring and logic.
+### ⚠️ Implementation Note
+The physical hardware integration encountered a power/serial issue during testing. However, the logic is verified. Below is the circuit diagram showing how the Solenoid is triggered via the Relay on Pin 7:
+
+### 🛠️ Hardware Setup (Tinkercad)
+![Tinkercad Circuit Diagram](tinkercad-setup.png)
+
+**Note on Simulation:** In the Tinkercad diagram above, the **Push Button** represents the signal received from the Python Face Recognition code. When the model identifies an authorized user, it sends a '1' via Serial, which triggers the Relay to open the Solenoid Lock.
 
 ### 📂 How to Use
 1. Clone the repository.
